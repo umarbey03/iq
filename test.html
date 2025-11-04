@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon Pack -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon-32x32.png" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <!-- ✅ SEO: Core -->
+  <title>IQ Test Online | Choose Short, Medium, or High-Accuracy | IQWorld</title>
+  <meta name="description"
+    content="Take a free IQ test online at IQWorld. Choose between short (8 min), medium (22 min), or high-accuracy (45 min) tests. Get instant IQ results with a downloadable PDF certificate." />
+  <meta name="keywords"
+    content="IQ test, online IQ test, intelligence test, free IQ quiz, IQ certificate, quick IQ test, IQWorld" />
+  <meta name="author" content="IQWorld Team" />
+  <link rel="canonical" href="https://www.iqworld.com/test.html" />
+
+  <!-- ✅ SEO: Open Graph (for social media) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.iqworld.com/test.html" />
+  <meta property="og:title" content="Online IQ Test | IQWorld" />
+  <meta property="og:description"
+    content="Choose from short, medium, or high-accuracy IQ tests. Fast, accurate, and instant results." />
+  <meta property="og:image" content="https://www.iqworld.com/assets/og-iqworld-banner.jpg" />
+
+  <!-- ✅ SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="IQ Test Online | IQWorld" />
+  <meta name="twitter:description"
+    content="Take your IQ test now — short, medium, or high-accuracy options with instant results." />
+  <meta name="twitter:image" content="https://www.iqworld.com/assets/twitter-iqworld-card.jpg" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <!-- ✅ Structured Data: JSON-LD (Google Schema) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "IQ Test Online - IQWorld",
+      "description": "Choose between short, medium, or high-accuracy IQ tests. Get instant IQ results and PDF certificates.",
+      "url": "https://www.iqworld.com/test.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IQWorld",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.iqworld.com/assets/logo.png"
+        }
+      }
+    }
+  </script>
+
+  <!-- ✅ Tailwind + Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#7C3AED', success: '#10B981', muted: '#64748B', border: '#E2E8F0' },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="css/test.css">
+
+  <!-- ✅ Custom Page-Specific Enhancements -->
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#7C3AED" />
+  <meta name="apple-mobile-web-app-title" content="IQWorld IQ Test" />
+
+  <style>
+    #sideMenu,
+    #sheet {
+      transition: transform .4s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    #overlay,
+    #sheetOverlay {
+      transition: opacity .3s;
+    }
+
+    /* Fireworks Animation for Results */
+    .fireworks {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fireworks::before,
+    .fireworks::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      animation: bang 1.5s ease-out infinite backwards, gravity 1.5s ease-in infinite backwards, position 6s linear infinite backwards;
+      box-shadow: 0 0 #fff;
+    }
+
+    .fireworks::after {
+      animation-delay: 1.25s, 1.25s, 1.25s;
+      animation-duration: 1.25s, 1.25s, 7.25s;
+    }
+
+    @keyframes bang {
+      to {
+        box-shadow: random(500)-250px random(500)-250px hsl(random(360), 100%, 50%);
+      }
+    }
+
+    @keyframes gravity {
+      to {
+        transform: translateY(200px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes position {
+
+      0%,
+      19.9% {
+        top: 10%;
+        left: 40%;
+      }
+
+      20%,
+      39.9% {
+        top: 40%;
+        left: 30%;
+      }
+
+      40%,
+      59.9% {
+        top: 20%;
+        left: 70%;
+      }
+
+      60%,
+      79.9% {
+        top: 30%;
+        left: 20%;
+      }
+
+      80%,
+      99.9% {
+        top: 30%;
+        left: 80%;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-purple-50 via-blue-50 to-emerald-50 min-h-screen">
+
+  <!-- NAVBAR -->
+  <header class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-border">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="/" class="text-2xl font-black text-primary tracking-tighter">IQWorld</a>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="/" class="text-sm font-medium text-gray-600 hover:text-primary transition">Home</a>
+        <a href="/test.html" class="text-sm font-medium text-gray-600 text-primary transition">Test</a>
+        <a href="/about.html" class="text-sm font-medium text-gray-600 hover:text-primary transition">About</a>
+        <a href="/faq.html" class="text-sm font-medium text-gray-600 hover:text-primary transition">FAQ</a>
+        <a href="/contact.html" class="text-sm font-medium hovertext-primary font-bold">Contact</a>
+      </nav>
+      <button id="navTrigger" class="md:hidden p-3 rounded-lg hover:bg-gray-100 transition">
+        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
+  <nav id="sideMenu" class="fixed inset-y-0 left-0 w-72 bg-white shadow-2xl z-50 -translate-x-full">
+    <div class="p-8 space-y-8">
+      <a href="/" class="block text-2xl font-bold hover:text-primary transition">Home</a>
+      <a href="/test.html" class="block text-2xl font-bold hover:text-primary transition">Test</a>
+      <a href="/about.html" class="block text-2xl font-bold hover:text-primary transition">About</a>
+      <a href="/faq.html" class="block text-2xl font-bold hover:text-primary transition">FAQ</a>
+      <a href="/contact.html" class="block text-2xl font-bold hover:text-primary">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="heroSection" class="pt-20 pb-16 text-center">
+    <div class="max-w-5xl mx-auto px-4">
+      <h1 class="text-5xl sm:text-6xl md:text-7xl font-black mb-6">Choose Your Perfect IQ Test</h1>
+      <p class="text-xl sm:text-2xl text-muted mb-12 max-w-3xl mx-auto">Fast, balanced, or maximum accuracy – get
+        instant results & PDF certificate</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- SHORT -->
+        <div class="group" data-mode="short">
+          <div
+            class="p-8 bg-white rounded-3xl shadow-xl border-2 border-border/60 group-hover:border-primary transition-all h-full flex flex-col">
+            <div class="flex-1 text-left">
+              <div class="text-7xl mb-4">⚡</div>
+              <h3 class="text-3xl font-black mb-2">Short Test</h3>
+              <p class="text-lg text-muted mb-4">15 questions • 8 minutes</p>
+              <p class="text-sm opacity-80">Need a quick brain check?<br>Get your IQ in just 8 minutes!</p>
+            </div>
+            <button
+              class="start-btn mt-6 w-full py-4 bg-primary text-white font-bold rounded-2xl hover:bg-primary/90 shadow-lg transition">
+              Start Now
+            </button>
+          </div>
+        </div>
+
+        <!-- MEDIUM -->
+        <div class="group" data-mode="medium">
+          <div
+            class="p-8 bg-gradient-to-br from-white to-purple-50 rounded-3xl shadow-2xl border-4 border-primary/30 scale-105 h-full flex flex-col relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-primary/10 px-4 py-1 rounded-bl-2xl text-sm font-bold text-primary">
+              Most Popular</div>
+            <div class="flex-1 text-left">
+              <div class="text-7xl mb-4">⭐</div>
+              <h3 class="text-3xl font-black mb-2 text-primary">Medium Test</h3>
+              <p class="text-lg text-muted mb-4">30 questions • 22 minutes</p>
+              <p class="text-sm opacity-80">The gold standard!<br>Scientifically accurate + perfect timing.</p>
+            </div>
+            <button
+              class="start-btn mt-6 w-full py-4 bg-primary text-white font-bold rounded-2xl hover:bg-primary/90 shadow-xl transition">
+              Start Most Popular
+            </button>
+          </div>
+        </div>
+
+        <!-- HIGH -->
+        <div class="group" data-mode="high">
+          <div
+            class="p-8 bg-white rounded-3xl shadow-xl border-2 border-border/60 group-hover:border-primary transition-all h-full flex flex-col">
+            <div class="flex-1 text-left">
+              <div class="text-7xl mb-4">🏆</div>
+              <h3 class="text-3xl font-black mb-2">High-Accuracy</h3>
+              <p class="text-lg text-muted mb-4">50 questions • 45 minutes</p>
+              <p class="text-sm opacity-80">For serious testers!<br>Maximum precision guaranteed.</p>
+            </div>
+            <button
+              class="start-btn mt-6 w-full py-4 bg-primary text-white font-bold rounded-2xl hover:bg-primary/90 shadow-lg transition">
+              Go Pro
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEST AREA -->
+  <section id="testArea" class="hidden max-w-4xl mx-auto px-4 pt-20 pb-32" aria-live="polite">
+    <div class="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 lg:p-12 border-4 border-primary/30">
+      <div class="flex flex-col sm:flex-row justify-between gap-6 mb-10">
+        <div id="timer" class="text-3xl font-black text-primary text-center sm:text-left">00:00</div>
+        <div class="flex-1">
+          <div class="bg-border/50 rounded-full h-4 overflow-hidden">
+            <div id="progress" class="bg-gradient-to-r from-primary to-success h-4 rounded-full" style="width:0%"></div>
+          </div>
+        </div>
+        <div id="questionNum" class="text-xl font-bold text-center sm:text-right">1 / 15</div>
+      </div>
+      <h2 id="question" class="text-2xl lg:text-3xl font-bold text-center mb-10"></h2>
+      <div id="options" class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10"></div>
+      <div class="flex justify-between">
+        <button id="prevBtn"
+          class="px-8 py-4 border-2 border-border rounded-2xl font-bold hover:border-primary hover:text-primary transition">Previous</button>
+        <button id="nextBtn"
+          class="px-10 py-5 bg-primary text-white rounded-2xl font-bold shadow-xl hover:shadow-2xl transition">Next</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="hidden max-w-4xl mx-auto px-4 py-24 text-center">
+    <div class="bg-white rounded-3xl shadow-2xl p-12 lg:p-20 border-4 border-success/50">
+      <h2 class="text-5xl lg:text-7xl font-black mb-8">Your IQ: <span id="iqScore" class="text-primary">—</span></h2>
+      <p class="text-3xl text-muted mb-8">Percentile: <span id="percentile">—</span>%</p>
+      <div id="badge"
+        class="text-6xl sm:text-8xl lg:text-9xl mb-8 font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-success animate-pulse">
+        GENIUS
+      </div>
+      <button id="downloadBtn"
+        class="px-12 py-6 bg-primary text-white text-2xl font-bold rounded-full shadow-2xl hover:shadow-3xl transition">
+        Download Certificate
+      </button>
+      <div class="mt-8">
+        <a href="/test.html" class="text-primary font-bold text-lg underline hover:no-underline">Take Another Test →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-100 py-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <div class="flex justify-center space-x-8 mb-6 text-sm font-medium">
+        <a href="/privacy.html" class="text-gray-600 hover:text-primary transition">Privacy</a>
+        <a href="/terms.html" class="text-gray-600 hover:text-primary transition">Terms</a>
+        <a href="/contact.html" class="text-gray-600 hover:text-primary transition">Contact</a>
+      </div>
+      <p class="text-xs text-gray-600">© 2025 IQWorld. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- COOKIE BANNER – HAR BIR SAHIFA UCHUN -->
+  <div id="cookieBanner"
+    class="fixed bottom-0 left-0 right-0 z-[9999] bg-white/95 backdrop-blur-lg border-t border-gray-200 shadow-2xl p-4 translate-y-full transition-transform duration-500">
+    <div
+      class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-sm">
+      <div class="flex-1">
+        <p class="font-medium text-gray-800">
+          We use <span class="font-bold">essential cookies</span> to run the IQ test. No tracking.
+          <a href="/privacy.html#cookies" class="text-primary underline hover:no-underline">Learn more</a>
+        </p>
+      </div>
+      <div class="flex gap-3">
+        <button id="acceptCookies"
+          class="px-5 py-2.5 bg-primary text-white text-sm font-bold rounded-full hover:bg-primary/90 transition">
+          Accept
+        </button>
+        <button id="declineCookies"
+          class="px-5 py-2.5 bg-white border-2 border-gray-300 text-sm font-bold rounded-full hover:border-primary hover:text-primary transition">
+          Decline
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Cookie Banner Logic – Universal
+    document.addEventListener('DOMContentLoaded', () => {
+      const banner = document.getElementById('cookieBanner');
+      const acceptBtn = document.getElementById('acceptCookies');
+      const declineBtn = document.getElementById('declineCookies');
+
+      // Agar oldin qaror qilingan bo‘lsa – banner chiqmaydi
+      if (localStorage.getItem('cookieConsent')) {
+        return;
+      }
+
+      // 1 soniyadan keyin chiqadi
+      setTimeout(() => {
+        banner.classList.remove('translate-y-full');
+      }, 1000);
+
+      // ACCEPT
+      acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'accepted');
+        hideBanner();
+        loadGoogleAds(); // Agar Google Ads ishlatmoqchi bo‘lsangiz
+      });
+
+      // DECLINE
+      declineBtn.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'declined');
+        hideBanner();
+        // No ads, no tracking
+      });
+
+      function hideBanner() {
+        banner.classList.add('translate-y-full');
+        setTimeout(() => banner.remove(), 600);
+      }
+
+      // Google Ads faqat Accept bosilganda yuklanadi
+      function loadGoogleAds() {
+        if (window.googleAdsLoaded) return;
+        window.googleAdsLoaded = true;
+
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
+        script.crossOrigin = 'anonymous';
+        document.head.appendChild(script);
+
+        // Optional: Initialize ads
+        // (adsbygoogle = window.adsbygoogle || []).push({});
+      }
+    });
+  </script>
+
+  <script src="js/test.js" defer></script>
+  <script src="js/navbar.js" defer></script>
+</body>
+
+</html>

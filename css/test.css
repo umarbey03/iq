@@ -1,0 +1,56 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#question-container button {
+  transition: all 0.25s ease;
+}
+
+#mobileMenu   { transition: transform .4s cubic-bezier(.4,0,.2,1); }
+#sheetPanel   { transition: transform .5s cubic-bezier(.4,0,.2,1); }
+#overlayMain  { transition: opacity .3s; }
+
+/* MOBILE UCHUN BADGE */
+#badge {
+  line-height: 1.1;
+  letter-spacing: -2px;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* MUSHKAK (Fireworks) */
+.fireworks {
+  position: relative;
+  overflow: hidden;
+}
+.fireworks::before,
+.fireworks::after {
+  content: '🎉';
+  position: absolute;
+  font-size: 3rem;
+  animation: firework 2s ease-out infinite;
+  opacity: 0;
+}
+.fireworks::before  { left: 10%; top: 20%; animation-delay: 0.2s; }
+.fireworks::after   { right: 10%; top: 30%; animation-delay: 0.8s; }
+
+@keyframes firework {
+  0%   { transform: translateY(0) scale(0); opacity: 0; }
+  50%  { opacity: 1; }
+  100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+}
+
+/* MOBILE OPTIMIZATSIYA */
+@media (max-width: 640px) {
+  #results div {
+    padding: 2rem 1rem !important;
+  }
+  #iqScore { font-size: 4rem !important; }
+  #percentile { font-size: 1.5rem !important; }
+  #downloadBtn { padding: 1rem 2rem; font-size: 1.25rem; }
+}
+

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <!-- ==== CORE SEO ==== -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Contact Us | IQWorld – Free IQ Test Support</title>
+    <meta name="description" content="Get help with IQ test, certificate issues, or feedback. We reply in 24h." />
+
+    <meta name="keywords" content="IQWorld contact, IQ test support, certificate help, feedback" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://iqworld.com/contact.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact IQWorld – Instant Support" />
+    <meta property="og:description" content="Email, form, or live chat. We’re here 24/7." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://iqworld.com/contact.html" />
+    <meta property="og:image" content="https://iqworld.com/og-contact.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact IQWorld" />
+    <meta name="twitter:description" content="Get help in 24h" />
+    <!-- Favicon Pack -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon-32x32.png" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- JSON-LD ContactPoint -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "IQWorld",
+    "url": "https://iqworld.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "support@iqworld.com",
+      "contactType": "Customer Service",
+      "availableLanguage": "English"
+    }
+  }
+  </script>
+
+    <!-- Tailwind + Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#7C3AED', success: '#10B981', muted: '#64748B', border: '#E2E8F0' },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                    animation: { 'fade-up': 'fadeUp 0.6s ease-out forwards' },
+                    keyframes: { fadeUp: { '0%': { opacity: 0, transform: 'translateY(20px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } } }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-br from-purple-50 via-blue-50 to-emerald-50 min-h-screen">
+
+    <!-- NAVBAR -->
+    <header class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="/" class="text-2xl font-black text-primary tracking-tighter">IQWorld</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="/" class="text-sm font-medium text-gray-600 hover:text-primary transition">Home</a>
+                <a href="/test.html" class="text-sm font-medium text-gray-600 hover:text-primary transition">Test</a>
+                <a href="/about.html" class="text-sm font-medium text-gray-600 hover:text-primary transition">About</a>
+                <a href="/faq.html" class="text-sm font-medium text-gray-600 hover:text-primary transition">FAQ</a>
+                <a href="/contact.html" class="text-sm font-medium text-primary font-bold">Contact</a>
+            </nav>
+            <button id="navTrigger" class="md:hidden p-3 rounded-lg hover:bg-gray-100 transition">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
+    <nav id="sideMenu" class="fixed inset-y-0 left-0 w-72 bg-white shadow-2xl z-50 -translate-x-full">
+        <div class="p-8 space-y-8">
+            <a href="/" class="block text-2xl font-bold hover:text-primary transition">Home</a>
+            <a href="/test.html" class="block text-2xl font-bold hover:text-primary transition">Test</a>
+            <a href="/about.html" class="block text-2xl font-bold hover:text-primary transition">About</a>
+            <a href="/faq.html" class="block text-2xl font-bold hover:text-primary transition">FAQ</a>
+            <a href="/contact.html" class="block text-2xl font-bold text-primary">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="pt-24 pb-16 text-center">
+        <div class="max-w-5xl mx-auto px-4">
+            <h1 class="text-5xl sm:text-6xl md:text-7xl font-black mb-6">Get in Touch</h1>
+            <p class="text-xl sm:text-2xl text-muted mb-12 max-w-3xl mx-auto">
+                Have a question? Need help with your certificate? We reply in <span class="text-primary font-bold">24
+                    hours</span>.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT GRID -->
+    <section class="max-w-6xl mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+            <!-- CONTACT FORM -->
+            <div class="bg-white rounded-3xl shadow-2xl p-8 lg:p-12 border-2 border-border/50">
+                <h2 class="text-3xl font-black mb-8">Send Us a Message</h2>
+
+                <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-bold text-muted mb-2">Your Name</label>
+                        <input type="text" name="name" id="name" required
+                            class="w-full px-5 py-4 border border-border rounded-2xl focus:border-primary focus:outline-none transition"
+                            placeholder="John Doe">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-bold text-muted mb-2">Email Address</label>
+                        <input type="email" name="_replyto" id="email" required
+                            class="w-full px-5 py-4 border border-border rounded-2xl focus:border-primary focus:outline-none transition"
+                            placeholder="john@example.com">
+                    </div>
+
+                    <div>
+                        <label for="subject" class="block text-sm font-bold text-muted mb-2">Subject</label>
+                        <select name="subject" id="subject" required
+                            class="w-full px-5 py-4 border border-border rounded-2xl focus:border-primary focus:outline-none transition">
+                            <option value="">Choose one...</option>
+                            <option>Certificate Issue</option>
+                            <option>Test Not Working</option>
+                            <option>Partnership</option>
+                            <option>Feedback</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-bold text-muted mb-2">Your Message</label>
+                        <textarea name="message" id="message" rows="5" required
+                            class="w-full px-5 py-4 border border-border rounded-2xl focus:border-primary focus:outline-none transition resize-none"
+                            placeholder="Tell us how we can help..."></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-5 bg-primary text-white text-xl font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:bg-primary/90 transition">
+                        Send Message
+                    </button>
+                </form>
+
+                <p class="mt-6 text-sm text-muted text-center">
+                    We’ll reply to your email within 24 hours.
+                </p>
+            </div>
+
+            <!-- CONTACT INFO -->
+            <div class="space-y-8">
+                <!-- <div class="bg-white rounded-3xl shadow-xl p-8 border-2 border-border/50">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="text-4xl">Envelope</div>
+                        <h3 class="text-2xl font-black">Email Us</h3>
+                    </div>
+                    <p class="text-muted mb-2">For fast response:</p>
+                    <a href="mailto:support@iqworld.com" class="text-primary font-bold text-lg hover:underline">
+                        support@iqworld.com
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-xl p-8 border-2 border-border/50">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="text-4xl">Clock</div>
+                        <h3 class="text-2xl font-black">Response Time</h3>
+                    </div>
+                    <p class="text-muted">
+                        <strong>Monday–Friday:</strong> 1–2 hours<br>
+                        <strong>Weekends:</strong> 6–12 hours
+                    </p>
+                </div> -->
+
+                <div class="bg-gradient-to-r from-primary/10 to-purple-100 rounded-3xl p-8">
+                    <h3 class="text-2xl font-black mb-4">Common Questions?</h3>
+                    <p class="text-muted mb-4">Check our FAQ first:</p>
+                    <a href="/faq.html"
+                        class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-full font-bold hover:shadow-lg transition">
+                        View FAQ
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-border py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 text-center text-muted">
+            <p class="mb-4">© 2025 IQWorld. All rights reserved.</p>
+            <div class="flex justify-center gap-6 text-sm">
+                <a href="/privacy.html" class="hover:text-primary">Privacy Policy</a>
+                <a href="/terms.html" class="hover:text-primary">Terms of Service</a>
+                <a href="/contact.html" class="text-primary font-bold">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE BOTTOM SHEET -->
+    <div id="bottomSheet" class="fixed inset-0 z-50 hidden">
+        <div id="sheetOverlay" class="absolute inset-0 bg-black/40"></div>
+        <div id="sheet"
+            class="absolute inset-x-0 bottom-0 bg-white rounded-t-3xl shadow-2xl max-h-[80vh] overflow-y-auto translate-y-full">
+            <div class="sticky top-0 bg-white border-b border-border py-4 flex justify-center">
+                <div class="w-12 h-1.5 bg-border rounded-full"></div>
+            </div>
+            <nav class="px-6 py-8 space-y-6 text-xl font-bold">
+                <a href="/" class="flex items-center gap-4 hover:text-primary transition">Home</a>
+                <a href="/test.html" class="flex items-center gap-4 hover:text-primary transition">Test</a>
+                <a href="/about.html" class="flex items-center gap-4 hover:text-primary transition">About</a>
+                <a href="/faq.html" class="flex items-center gap-4 hover:text-primary transition">FAQ</a>
+                <a href="/contact.html" class="flex items-center gap-4 text-primary">Contact</a>
+            </nav>
+            <div class="px-6 pb-8">
+                <button id="closeBtn"
+                    class="w-full py-4 bg-primary text-white rounded-2xl font-bold hover:bg-primary/90 transition">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- COOKIE BANNER – HAR BIR SAHIFA UCHUN -->
+    <div id="cookieBanner"
+        class="fixed bottom-0 left-0 right-0 z-[9999] bg-white/95 backdrop-blur-lg border-t border-gray-200 shadow-2xl p-4 translate-y-full transition-transform duration-500">
+        <div
+            class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-sm">
+            <div class="flex-1">
+                <p class="font-medium text-gray-800">
+                    We use <span class="font-bold">essential cookies</span> to run the IQ test. No tracking.
+                    <a href="/privacy.html#cookies" class="text-primary underline hover:no-underline">Learn more</a>
+                </p>
+            </div>
+            <div class="flex gap-3">
+                <button id="acceptCookies"
+                    class="px-5 py-2.5 bg-primary text-white text-sm font-bold rounded-full hover:bg-primary/90 transition">
+                    Accept
+                </button>
+                <button id="declineCookies"
+                    class="px-5 py-2.5 bg-white border-2 border-gray-300 text-sm font-bold rounded-full hover:border-primary hover:text-primary transition">
+                    Decline
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Banner Logic – Universal
+        document.addEventListener('DOMContentLoaded', () => {
+            const banner = document.getElementById('cookieBanner');
+            const acceptBtn = document.getElementById('acceptCookies');
+            const declineBtn = document.getElementById('declineCookies');
+
+            // Agar oldin qaror qilingan bo‘lsa – banner chiqmaydi
+            if (localStorage.getItem('cookieConsent')) {
+                return;
+            }
+
+            // 1 soniyadan keyin chiqadi
+            setTimeout(() => {
+                banner.classList.remove('translate-y-full');
+            }, 1000);
+
+            // ACCEPT
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                hideBanner();
+                loadGoogleAds(); // Agar Google Ads ishlatmoqchi bo‘lsangiz
+            });
+
+            // DECLINE
+            declineBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                hideBanner();
+                // No ads, no tracking
+            });
+
+            function hideBanner() {
+                banner.classList.add('translate-y-full');
+                setTimeout(() => banner.remove(), 600);
+            }
+
+            // Google Ads faqat Accept bosilganda yuklanadi
+            function loadGoogleAds() {
+                if (window.googleAdsLoaded) return;
+                window.googleAdsLoaded = true;
+
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
+                script.crossOrigin = 'anonymous';
+                document.head.appendChild(script);
+
+                // Optional: Initialize ads
+                // (adsbygoogle = window.adsbygoogle || []).push({});
+            }
+        });
+    </script>
+
+    <!-- SCRIPTS -->
+    <script src="js/navbar.js" defer></script>
+    <script>
+        // Formspree: Replace with your ID
+        // Go to https://formspree.io → create form → get ID
+        // Example: action="https://formspree.io/f/xabc1234"
+    </script>
+</body>
+
+</html>

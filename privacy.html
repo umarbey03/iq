@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | IQWorld</title>
+    <meta name="description"
+        content="IQWorld Privacy Policy: How we protect your data, cookies, no sharing, Google Ads compliance." />
+
+    <!-- SEO (same as index.html) -->
+    <meta name="keywords" content="IQWorld privacy policy, IQ test data privacy, free IQ test privacy" />
+    <link rel="canonical" href="https://iqworld.com/privacy.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Privacy Policy - IQWorld" />
+    <meta property="og:description" content="Your data is safe with us. No sharing, no ads tracking." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://iqworld.com/privacy.html" />
+    <meta property="og:image" content="https://iqworld.com/og-privacy.jpg" />
+    <!-- Favicon Pack -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon-32x32.png" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#7C3AED', success: '#10B981', muted: '#64748B', border: '#E2E8F0' },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-br from-purple-50 via-blue-50 to-emerald-50 min-h-screen">
+
+    <!-- NAVBAR -->
+    <header class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="/" class="text-2xl font-black text-primary tracking-tighter">IQWorld</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="/" class="text-sm font-medium text-gray-600 hover:text-primary transition">Home</a>
+                <a href="/test.html" class="text-sm font-medium text-gray-600 hover:text-primary transition">Test</a>
+                <a href="/about.html" class="text-sm font-medium text-gray-600 hover:text-primary transition">About</a>
+                <a href="/faq.html" class="text-sm font-medium text-gray-600 hover:text-primary transition">FAQ</a>
+                <a href="/contact.html" class="text-sm font-medium text-primary font-bold">Contact</a>
+            </nav>
+            <button id="navTrigger" class="md:hidden p-3 rounded-lg hover:bg-gray-100 transition">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
+    <nav id="sideMenu" class="fixed inset-y-0 left-0 w-72 bg-white shadow-2xl z-50 -translate-x-full">
+        <div class="p-8 space-y-8">
+            <a href="/" class="block text-2xl font-bold hover:text-primary transition">Home</a>
+            <a href="/test.html" class="block text-2xl font-bold hover:text-primary transition">Test</a>
+            <a href="/about.html" class="block text-2xl font-bold hover:text-primary transition">About</a>
+            <a href="/faq.html" class="block text-2xl font-bold hover:text-primary transition">FAQ</a>
+            <a href="/contact.html" class="block text-2xl font-bold hover:text-primary">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="fixed inset-x-0 top-0 z-30 bg-white/95 backdrop-blur-lg border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="/" class="text-2xl font-black text-primary tracking-tighter"
+                aria-label="IQWorld Homepage">IQWorld</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="/" class="text-sm font-medium text-gray-600 hover:text-primary transition">Home</a>
+                <a href="/test.html" class="text-sm font-medium hover:text-primary">Take Test</a>
+                <a href="/about.html" class="text-sm font-medium text-gray-600 hover:text-primary transition">About</a>
+                <a href="/faq.html" class="text-sm font-medium text-gray-600 hover:text-primary transition">FAQ</a>
+            </nav>
+            <button id="navTrigger" class="md:hidden p-3 rounded-lg hover:bg-gray-100 transition"
+                aria-label="Open menu">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="pt-24 pb-16 text-center">
+        <div class="max-w-3xl mx-auto px-4">
+            <h1 class="text-5xl sm:text-6xl md:text-7xl font-black mb-6">Privacy Policy</h1>
+            <p class="text-xl text-muted mb-12">Last Updated: November 4, 2025</p>
+        </div>
+    </section>
+
+    <!-- PRIVACY CONTENT -->
+    <section class="max-w-4xl mx-auto px-4 py-16 space-y-8">
+        <h2 class="text-3xl font-bold mb-4">1. Introduction</h2>
+        <p class="text-muted leading-relaxed">
+            IQWorld ("we", "us", "our") respects your privacy. This Privacy Policy explains how we collect, use, and
+            protect your information when you use our website and IQ test services. By using IQWorld, you agree to this
+            policy.
+        </p>
+
+        <h2 class="text-3xl font-bold mb-4">2. Information We Collect</h2>
+        <p class="text-muted leading-relaxed">
+            We collect minimal data to provide the service:
+        <ul class="list-disc ml-6 mt-4 space-y-2">
+            <li><strong>Anonymous Data</strong>: IP address, browser type, device info for analytics (no personal
+                identification).</li>
+            <li><strong>Test Data</strong>: Your answers (anonymous, not stored).</li>
+            <li><strong>Cookies</strong>: Session cookies for functionality; no tracking cookies.</li>
+        </ul>
+        No email, name, or personal data required.
+        </p>
+
+        <h2 class="text-3xl font-bold mb-4">3. How We Use Your Information</h2>
+        <p class="text-muted leading-relaxed">
+        <ul class="list-disc ml-6 mt-4 space-y-2">
+            <li>Calculate IQ scores and generate certificates.</li>
+            <li>Improve service (aggregate, anonymous analytics).</li>
+            <li>No selling or sharing with third parties (except legal requirements).</li>
+        </ul>
+        </p>
+
+        <h2 class="text-3xl font-bold mb-4">4. Google Ads Compliance</h2>
+        <p class="text-muted leading-relaxed">
+            We use Google Ads for promotion. Google may use cookies to serve ads based on your visits. We do not share
+            personal data.
+        <ul class="list-disc ml-6 mt-4 space-y-2">
+            <li><strong>Opt-out</strong>: Visit <a href="https://adssettings.google.com" target="_blank" rel="noopener"
+                    class="text-primary underline">Google Ads Settings</a> or <a
+                    href="https://www.aboutads.info/choices/" target="_blank" rel="noopener"
+                    class="text-primary underline">YourAdChoices</a>.</li>
+            <li>Third-party vendors (including Google) use cookies to serve ads based on prior visits. No device ID
+                tracking.</li>
+        </ul>
+        </p>
+
+        <h2 class="text-3xl font-bold mb-4">5. Cookies & Consent</h2>
+        <p class="text-muted leading-relaxed">
+            We use <strong>only essential cookies</strong> to:
+        <ul class="list-disc ml-6 mt-2 space-y-1">
+            <li>Save test progress</li>
+            <li>Prevent abuse</li>
+            <li>Ensure smooth experience</li>
+        </ul>
+        <br>
+        <strong>No analytics. No tracking. No third-party cookies.</strong><br>
+        You see a consent banner on first visit. <strong>Decline = test still works.</strong>
+        </p>
+
+        <h2 class="text-3xl font-bold mb-4">6. Data Security</h2>
+        <p class="text-muted leading-relaxed">
+            We use HTTPS and secure servers. No data stored long-term. Compliance with GDPR, CCPA, and COPPA.
+        </p>
+
+        <h2 class="text-3xl font-bold mb-4">7. Children's Privacy (COPPA)</h2>
+        <p class="text-muted leading-relaxed">
+            IQWorld is not for children under 13. No data collection from minors. Parents: Contact us if concerned.
+        </p>
+
+        <h2 class="text-3xl font-bold mb-4">8. Your Rights (GDPR/CCPA)</h2>
+        <p class="text-muted leading-relaxed">
+        <ul class="list-disc ml-6 mt-4 space-y-2">
+            <li>Access, delete, or correct data (email hello@iqworld.com).</li>
+            <li>Opt-out of any future data use.</li>
+        </ul>
+        </p>
+
+        <h2 class="text-3xl font-bold mb-4">9. Changes to Policy</h2>
+        <p class="text-muted leading-relaxed">
+            We may update this policy. Check back periodically. Last updated: November 4, 2025.
+        </p>
+
+        <h2 class="text-3xl font-bold mb-4">10. Contact Us</h2>
+        <p class="text-muted leading-relaxed">
+            Questions? Email <a href="mailto:privacy@iqworld.com"
+                class="text-primary underline">privacy@iqworld.com</a>.
+        </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-gray-100 py-12" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <nav class="flex justify-center space-x-8 mb-6 text-sm font-medium" aria-label="Footer navigation">
+                <a href="/privacy.html" class="text-bold text-primary transition">Privacy</a>
+                <a href="/terms.html" class="text-gray-600 hover:text-primary transition">Terms</a>
+                <a href="/contact.html" class="text-gray-600 hover:text-primary transition">Contact</a>
+            </nav>
+            <p class="text-xs text-gray-600">© 2025 IQWorld. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- COOKIE BANNER – HAR BIR SAHIFA UCHUN -->
+    <div id="cookieBanner"
+        class="fixed bottom-0 left-0 right-0 z-[9999] bg-white/95 backdrop-blur-lg border-t border-gray-200 shadow-2xl p-4 translate-y-full transition-transform duration-500">
+        <div
+            class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-sm">
+            <div class="flex-1">
+                <p class="font-medium text-gray-800">
+                    We use <span class="font-bold">essential cookies</span> to run the IQ test. No tracking.
+                    <a href="/privacy.html#cookies" class="text-primary underline hover:no-underline">Learn more</a>
+                </p>
+            </div>
+            <div class="flex gap-3">
+                <button id="acceptCookies"
+                    class="px-5 py-2.5 bg-primary text-white text-sm font-bold rounded-full hover:bg-primary/90 transition">
+                    Accept
+                </button>
+                <button id="declineCookies"
+                    class="px-5 py-2.5 bg-white border-2 border-gray-300 text-sm font-bold rounded-full hover:border-primary hover:text-primary transition">
+                    Decline
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Banner Logic – Universal
+        document.addEventListener('DOMContentLoaded', () => {
+            const banner = document.getElementById('cookieBanner');
+            const acceptBtn = document.getElementById('acceptCookies');
+            const declineBtn = document.getElementById('declineCookies');
+
+            // Agar oldin qaror qilingan bo‘lsa – banner chiqmaydi
+            if (localStorage.getItem('cookieConsent')) {
+                return;
+            }
+
+            // 1 soniyadan keyin chiqadi
+            setTimeout(() => {
+                banner.classList.remove('translate-y-full');
+            }, 1000);
+
+            // ACCEPT
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                hideBanner();
+                loadGoogleAds(); // Agar Google Ads ishlatmoqchi bo‘lsangiz
+            });
+
+            // DECLINE
+            declineBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                hideBanner();
+                // No ads, no tracking
+            });
+
+            function hideBanner() {
+                banner.classList.add('translate-y-full');
+                setTimeout(() => banner.remove(), 600);
+            }
+
+            // Google Ads faqat Accept bosilganda yuklanadi
+            function loadGoogleAds() {
+                if (window.googleAdsLoaded) return;
+                window.googleAdsLoaded = true;
+
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
+                script.crossOrigin = 'anonymous';
+                document.head.appendChild(script);
+
+                // Optional: Initialize ads
+                // (adsbygoogle = window.adsbygoogle || []).push({});
+            }
+        });
+    </script>
+
+    <script src="js/navbar.js" defer></script>
+</body>
+
+</html>

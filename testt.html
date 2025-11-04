@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQ Test Challenge - Test Your Intelligence</title>
+    <meta name="description" content="Take our comprehensive IQ test with 10 challenging questions. Test your cognitive abilities in pattern recognition, logic, mathematics, and problem-solving. Get instant results and your estimated IQ score.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        'primary-glow': '#6366F1',
+                        accent: '#0EA5E9',
+                        success: '#16A34A',
+                        danger: '#DC2626',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .gradient-primary {
+            background: linear-gradient(135deg, #4F46E5, #6366F1);
+        }
+        .gradient-card {
+            background: linear-gradient(180deg, #ffffff, #f8fafc);
+        }
+        .shadow-card {
+            box-shadow: 0 4px 20px -2px rgba(79, 70, 229, 0.15);
+        }
+        .shadow-hover {
+            box-shadow: 0 8px 30px -4px rgba(79, 70, 229, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 via-gray-50 to-blue-50 min-h-screen">
+
+    <!-- Start Screen -->
+    <div id="startScreen" class="flex items-center justify-center p-4 min-h-screen">
+        <div class="max-w-2xl w-full p-8 md:p-12 shadow-card gradient-card rounded-2xl">
+            <div class="text-center space-y-6">
+                <div class="inline-flex items-center justify-center w-20 h-20 rounded-full gradient-primary shadow-lg">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                        IQ Test Challenge
+                    </h1>
+                    <p class="text-lg text-gray-600">
+                        Test your cognitive abilities with 10 challenging questions
+                    </p>
+                </div>
+                <div class="bg-blue-50 rounded-xl p-6 space-y-3 text-left">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="text-gray-800">Time Limit: 15 minutes</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="text-gray-800">10 Multiple Choice Questions</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                        <span class="text-gray-800">Instant Results & IQ Score</span>
+                    </div>
+                </div>
+                <button onclick="startTest()" class="w-full gradient-primary hover:opacity-90 text-white font-semibold text-lg h-14 rounded-lg shadow-hover transition-all duration-300">
+                    Start Test
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test Screen -->
+    <div id="testScreen" class="hidden p-4 md:p-8 min-h-screen">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <!-- Header -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white rounded-xl p-4 shadow-card">
+                <div class="flex items-center gap-3">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    </svg>
+                    <div>
+                        <h2 class="font-semibold text-lg">IQ Test Challenge</h2>
+                        <p class="text-sm text-gray-600">Question <span id="currentQ">1</span> of 10</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span id="timer" class="font-mono font-semibold text-gray-900">15:00</span>
+                    </div>
+                    <div class="text-sm text-gray-600">
+                        <span id="answeredCount">0</span>/10 answered
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress -->
+            <div class="space-y-2">
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div id="progressBar" class="gradient-primary h-2 rounded-full transition-all duration-300" style="width: 10%"></div>
+                </div>
+                <div class="flex justify-between text-xs text-gray-600">
+                    <span><span id="progressPercent">10</span>% Complete</span>
+                    <span><span id="questionsRemaining">9</span> questions remaining</span>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="p-6 md:p-8 shadow-card gradient-card rounded-2xl transition-all duration-300 hover:shadow-hover">
+                <div class="space-y-6">
+                    <div>
+                        <span id="categoryBadge" class="inline-block px-3 py-1 bg-blue-100 text-primary text-sm font-medium rounded-full mb-4">
+                            Pattern Recognition
+                        </span>
+                        <h3 id="questionText" class="text-xl md:text-2xl font-semibold leading-relaxed">
+                            Loading question...
+                        </h3>
+                    </div>
+                    <div id="optionsContainer" class="space-y-3">
+                        <!-- Options will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex justify-between gap-4">
+                <button onclick="previousQuestion()" id="prevBtn" class="flex-1 md:flex-none px-6 py-3 border-2 border-gray-300 rounded-lg font-medium hover:border-primary hover:bg-blue-50 transition-all disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                    Previous
+                </button>
+                <div class="flex gap-2 flex-1 md:flex-none">
+                    <button onclick="nextQuestion()" id="nextBtn" class="flex-1 gradient-primary hover:opacity-90 text-white font-semibold px-6 py-3 rounded-lg transition-all">
+                        Next
+                    </button>
+                    <button onclick="submitTest()" id="submitBtn" class="hidden flex-1 gradient-primary hover:opacity-90 text-white font-semibold px-6 py-3 rounded-lg transition-all">
+                        Submit Test
+                    </button>
+                </div>
+            </div>
+
+            <!-- Question Navigator -->
+            <div class="p-4 shadow-card bg-white rounded-xl">
+                <p class="text-sm font-medium mb-3 text-gray-600">Quick Navigation</p>
+                <div id="questionNav" class="flex flex-wrap gap-2">
+                    <!-- Question buttons will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="resultsScreen" class="hidden flex items-center justify-center p-4 min-h-screen">
+        <div class="max-w-2xl w-full p-8 md:p-12 shadow-card gradient-card rounded-2xl">
+            <div class="text-center space-y-6">
+                <div class="inline-flex items-center justify-center w-24 h-24 rounded-full gradient-primary shadow-lg animate-pulse">
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-2">Test Complete!</h2>
+                    <p class="text-gray-600">Here are your results</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border-2 border-primary/20">
+                    <div id="iqScore" class="text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
+                        100
+                    </div>
+                    <div class="text-lg text-gray-600 mb-4">Estimated IQ Score</div>
+                    <div class="flex justify-center gap-8 text-sm">
+                        <div>
+                            <div id="correctCount" class="text-2xl font-bold text-gray-900">0</div>
+                            <div class="text-gray-600">Correct</div>
+                        </div>
+                        <div class="w-px bg-gray-300"></div>
+                        <div>
+                            <div id="incorrectCount" class="text-2xl font-bold text-gray-900">0</div>
+                            <div class="text-gray-600">Incorrect</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="resultsBreakdown" class="space-y-3">
+                    <!-- Results will be inserted here -->
+                </div>
+
+                <button onclick="restartTest()" class="w-full gradient-primary hover:opacity-90 text-white font-semibold px-6 py-3 rounded-lg transition-all flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                    </svg>
+                    Take Test Again
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                id: 1,
+                question: "Which number should come next in the pattern? 2, 5, 11, 23, 47, ?",
+                options: ["71", "95", "99", "105"],
+                correctAnswer: 1,
+                category: "Pattern Recognition"
+            },
+            {
+                id: 2,
+                question: "If all Bloops are Razzies and all Razzies are Lazzies, then all Bloops are definitely Lazzies?",
+                options: ["True", "False", "Cannot be determined", "Sometimes true"],
+                correctAnswer: 0,
+                category: "Logic"
+            },
+            {
+                id: 3,
+                question: "What is 15% of 340?",
+                options: ["48", "51", "54", "57"],
+                correctAnswer: 1,
+                category: "Mathematics"
+            },
+            {
+                id: 4,
+                question: "Which word does not belong? Dog, Cat, Lion, Table, Horse",
+                options: ["Dog", "Lion", "Table", "Horse"],
+                correctAnswer: 2,
+                category: "Classification"
+            },
+            {
+                id: 5,
+                question: "If you rearrange the letters 'CIFAIPC', you would have the name of a(n):",
+                options: ["City", "Animal", "Ocean", "Country"],
+                correctAnswer: 2,
+                category: "Verbal"
+            },
+            {
+                id: 6,
+                question: "A clock shows 3:15. What is the angle between the hour and minute hands?",
+                options: ["0°", "7.5°", "15°", "22.5°"],
+                correctAnswer: 1,
+                category: "Spatial Reasoning"
+            },
+            {
+                id: 7,
+                question: "Complete the analogy: Book is to Reading as Fork is to ?",
+                options: ["Drawing", "Writing", "Eating", "Stirring"],
+                correctAnswer: 2,
+                category: "Analogies"
+            },
+            {
+                id: 8,
+                question: "Which number is the odd one out? 4, 9, 16, 20, 25, 36",
+                options: ["4", "9", "20", "36"],
+                correctAnswer: 2,
+                category: "Pattern Recognition"
+            },
+            {
+                id: 9,
+                question: "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+                options: ["$0.10", "$0.05", "$0.15", "$0.20"],
+                correctAnswer: 1,
+                category: "Problem Solving"
+            },
+            {
+                id: 10,
+                question: "What comes next in the sequence? J, F, M, A, M, ?",
+                options: ["J", "N", "S", "D"],
+                correctAnswer: 0,
+                category: "Pattern Recognition"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let selectedAnswers = new Array(questions.length).fill(null);
+        let timeLeft = 900; // 15 minutes in seconds
+        let timerInterval = null;
+
+        function startTest() {
+            document.getElementById('startScreen').classList.add('hidden');
+            document.getElementById('testScreen').classList.remove('hidden');
+            renderQuestion();
+            renderQuestionNav();
+            startTimer();
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                updateTimer();
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    submitTest();
+                }
+            }, 1000);
+        }
+
+        function updateTimer() {
+            const mins = Math.floor(timeLeft / 60);
+            const secs = timeLeft % 60;
+            const timerEl = document.getElementById('timer');
+            timerEl.textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+            if (timeLeft < 60) {
+                timerEl.classList.add('text-danger');
+            }
+        }
+
+        function renderQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById('currentQ').textContent = currentQuestion + 1;
+            document.getElementById('categoryBadge').textContent = q.category;
+            document.getElementById('questionText').textContent = q.question;
+
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+
+            q.options.forEach((option, idx) => {
+                const isSelected = selectedAnswers[currentQuestion] === idx;
+                const optionDiv = document.createElement('button');
+                optionDiv.className = `w-full p-4 text-left rounded-lg border-2 transition-all duration-200 ${
+                    isSelected
+                        ? 'border-primary bg-blue-50 shadow-md'
+                        : 'border-gray-200 hover:border-blue-300 hover:bg-blue-50/50'
+                }`;
+                optionDiv.onclick = () => selectAnswer(idx);
+                optionDiv.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
+                            isSelected ? 'border-primary bg-primary' : 'border-gray-300'
+                        }">
+                            ${isSelected ? '<div class="w-2 h-2 rounded-full bg-white"></div>' : ''}
+                        </div>
+                        <span class="font-medium ${isSelected ? 'text-primary' : 'text-gray-900'}">${option}</span>
+                    </div>
+                `;
+                optionsContainer.appendChild(optionDiv);
+            });
+
+            updateNavigation();
+            updateProgress();
+        }
+
+        function selectAnswer(answerIndex) {
+            selectedAnswers[currentQuestion] = answerIndex;
+            renderQuestion();
+            renderQuestionNav();
+        }
+
+        function updateNavigation() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const submitBtn = document.getElementById('submitBtn');
+
+            prevBtn.disabled = currentQuestion === 0;
+
+            if (currentQuestion === questions.length - 1) {
+                nextBtn.classList.add('hidden');
+                submitBtn.classList.remove('hidden');
+            } else {
+                nextBtn.classList.remove('hidden');
+                submitBtn.classList.add('hidden');
+            }
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('progressPercent').textContent = Math.round(progress);
+            document.getElementById('questionsRemaining').textContent = questions.length - currentQuestion - 1;
+
+            const answeredCount = selectedAnswers.filter(a => a !== null).length;
+            document.getElementById('answeredCount').textContent = answeredCount;
+        }
+
+        function renderQuestionNav() {
+            const nav = document.getElementById('questionNav');
+            nav.innerHTML = '';
+
+            questions.forEach((_, idx) => {
+                const btn = document.createElement('button');
+                const isAnswered = selectedAnswers[idx] !== null;
+                const isCurrent = idx === currentQuestion;
+
+                btn.className = `w-10 h-10 rounded-lg font-medium transition-all ${
+                    isCurrent
+                        ? 'gradient-primary text-white shadow-md'
+                        : isAnswered
+                        ? 'bg-blue-100 text-primary border-2 border-primary'
+                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`;
+                btn.textContent = idx + 1;
+                btn.onclick = () => goToQuestion(idx);
+                nav.appendChild(btn);
+            });
+        }
+
+        function goToQuestion(idx) {
+            currentQuestion = idx;
+            renderQuestion();
+            renderQuestionNav();
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                renderQuestion();
+                renderQuestionNav();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderQuestion();
+                renderQuestionNav();
+            }
+        }
+
+        function submitTest() {
+            clearInterval(timerInterval);
+            document.getElementById('testScreen').classList.add('hidden');
+            document.getElementById('resultsScreen').classList.remove('hidden');
+            showResults();
+        }
+
+        function showResults() {
+            let correct = 0;
+            selectedAnswers.forEach((answer, index) => {
+                if (answer === questions[index].correctAnswer) {
+                    correct++;
+                }
+            });
+
+            const iqScore = Math.round(85 + (correct / questions.length) * 45);
+
+            document.getElementById('iqScore').textContent = iqScore;
+            document.getElementById('correctCount').textContent = correct;
+            document.getElementById('incorrectCount').textContent = questions.length - correct;
+
+            const breakdown = document.getElementById('resultsBreakdown');
+            breakdown.innerHTML = '';
+
+            questions.forEach((q, idx) => {
+                const isCorrect = selectedAnswers[idx] === q.correctAnswer;
+                const wasAnswered = selectedAnswers[idx] !== null;
+
+                const resultDiv = document.createElement('div');
+                resultDiv.className = 'flex items-center justify-between p-4 rounded-lg bg-gray-50 border border-gray-200';
+                resultDiv.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        ${isCorrect 
+                            ? '<svg class="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>'
+                            : '<svg class="w-5 h-5 text-danger" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>'
+                        }
+                        <span class="text-sm font-medium">Question ${idx + 1} - ${q.category}</span>
+                    </div>
+                    <span class="text-sm text-gray-600">
+                        ${wasAnswered ? (isCorrect ? 'Correct' : 'Incorrect') : 'Skipped'}
+                    </span>
+                `;
+                breakdown.appendChild(resultDiv);
+            });
+        }
+
+        function restartTest() {
+            currentQuestion = 0;
+            selectedAnswers = new Array(questions.length).fill(null);
+            timeLeft = 900;
+            document.getElementById('resultsScreen').classList.add('hidden');
+            document.getElementById('startScreen').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
